@@ -1,23 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="lightGreenBlue">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="end" fill="clear" (click)="logOut()"> Cerrar Sesión
+    </ion-button>
     <ion-title>
-      HOME
+      Alarma de robo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" color="dark">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>¡Bienvenid@!</strong>
-    <p>Esta es la app Alarma de Robo</p>
+<ion-content [ngClass]="{'fondo-rojo': background, 'fondo-negro': !background }" >
+  <div>
+    <div id="info-text" *ngIf="!activado" class="ion-padding" style="color: white;">
+      Activar alarma
+    </div>
+    <div id="info-text" *ngIf="activado" class="ion-padding" style="margin-top: 5%; color: white;">
+      Desactivar alarma
+    </div>
+    <div> 
+      <img src="assets/flecha.png" class="flecha" alt="">
+    </div>
+    <div *ngIf="!activado">
+      <ion-button class="boton-alarma" (click) = "activar()" color="lightGreenBlue">
+        <img src="../../assets/icon/logoNegro.png" class="imagen-alarma" alt="">
+      </ion-button>
+    </div>
+    <div *ngIf="activado">
+      <ion-button class="boton-alarma" (click) = "activar()" color="dark">
+        <img src="../../assets/icon/icon.png" class="imagen-alarma" alt="">
+      </ion-button>
+    </div>
+    <div *ngIf="activado" class="protegido">
+      <span><b>USTED SE ENCUENTRA PROTEGIDO</b></span>
+    </div>
   </div>
 </ion-content>

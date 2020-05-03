@@ -1,31 +1,39 @@
-#container {
+div {
   text-align: center;
+}
+ 
+.flecha{
+  width: 80px;
+  height: 100px;
+  margin: 5% 5%;
+} 
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.imagen-alarma {
+  width: 80%;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.boton-alarma {
+  height: 250px;
+  width: 250px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.protegido {
+  margin-top: 20%;
+  color: white;
+  font-size: large;
+  height: 270px;
 }
 
-#container a {
-  text-decoration: none;
+#info-text{
+  text-align: center;
+  margin-top: 5%;
+  font-size: larger;
 }
 
-ion-content ion-toolbar {
-  --background: translucent;
+.fondo-rojo {
+  --ion-background-color: #d10f0f;
+}
+
+.fondo-negro {
+  --ion-background-color: #000000;
 }

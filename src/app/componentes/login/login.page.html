@@ -17,9 +17,7 @@
 </ion-header>
 
 <ion-content padding color="dark">
-  <img src="assets/icon/icon.png" alt="" class="icon" style="margin-top: 5%;">
-  <ion-label [hidden]='datosCorrectos' class="datos-incorrectos">Datos incorrectos</ion-label>
-  <ion-item color="dark">
+  <ion-item color="dark" style="margin-top: 7%;">
     <ion-label position="floating">Correo electrónico</ion-label> 
     <ion-input type="text" [(ngModel)]="correo" name="correo"></ion-input>
   </ion-item>
@@ -27,13 +25,21 @@
     <ion-label position="floating">Contraseña</ion-label> 
     <ion-input type="password" [(ngModel)]="clave" name="clave"></ion-input>
   </ion-item>
+  <ion-label [hidden]='datosCorrectos' class="datos-incorrectos">Datos incorrectos</ion-label>
   <br>
-  <ion-button expand="block" (click) = "onSubmitLogin()" color="lightGreenBlue">Entrar</ion-button>
-
-  <ion-item color="dark">
-    <ion-label position="stacked">Usuario</ion-label>
-    <ion-select (ionChange)="onChange($event.target.value)" placeholder="Seleccione uno: ">
-      <ion-select-option *ngFor="let usuario of usuarios" value={{usuario.id}}> {{usuario.nombre}} </ion-select-option>
-    </ion-select>
-  </ion-item>
+  <img src="assets/candado.png" alt="" class="icon" style="margin-top: 8%;">
+  <ion-button expand="block" 
+              (click) = "onSubmitLogin()" 
+              color="lightGreenBlue" 
+              style="margin-top: 8%;height: 75px;">
+    Entrar
+  </ion-button>
+  <ion-button color="tertiary" 
+              (click)="seleccionarUsuario()"
+              expand="block"
+              style="height: 75px; margin-top: 2%;"> 
+    <img src="../../../assets/user.png" class="imagen-boton" alt="">
+  </ion-button>
 </ion-content>
+
+  

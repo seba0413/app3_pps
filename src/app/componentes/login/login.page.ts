@@ -32,9 +32,10 @@ export class LoginPage implements OnInit {
   constructor(private authService: AuthService,
               private router: Router ) {}
 
-  onChange( id ) {
-    this.correo = this.usuarios[id].correo;
-    this.clave = this.usuarios[id].clave;
+  seleccionarUsuario() {
+    const idUsuario = Math.floor(Math.random() * 5);
+    this.correo = this.usuarios[idUsuario].correo;
+    this.clave = this.usuarios[idUsuario].clave;
   }
 
   onSubmitLogin() {
